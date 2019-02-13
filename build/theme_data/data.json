@@ -1,0 +1,14 @@
+{
+  "theme": {
+    "name": "My Theme",
+    "author": {
+      "name": "Author Name",
+      "uri": "www.example.com/author"
+    },
+    "version": "1.0.0",
+    "uri": "www.example.com",
+    "slug": "theme-name",
+    "prefix": "themename",
+    "description": "WP theme boilerplate based on Underscores."
+  }
+}

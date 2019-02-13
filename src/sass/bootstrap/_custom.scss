@@ -1,0 +1,27 @@
+// Variable overrides go first
+$body-bg: #111;
+$body-color: #111;
+
+// Import Bootstrap parts separately (instead of all at once)
+
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Remove from maps here
+$theme-colors: map-remove($theme-colors, "info", "light", "dark");
+
+// Optional
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+
+// Other
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #ff4136,
+  "custom-color": #900
+);

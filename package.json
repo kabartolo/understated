@@ -1,0 +1,52 @@
+{
+  "name": "understated",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kadair/understated.git"
+  },
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/kadair/understated/issues"
+  },
+  "homepage": "https://github.com/kadair/understated#readme",
+  "private": true,
+  "author": "K. A. Bartolo",
+  "scripts": {
+    "setup": "mustache build/theme_data/data.json build/theme_data/data_template.txt src/sass/_info.scss",
+    "build:dev": "npm run setup && webpack --mode development --hide-modules --config build/webpack.config.js",
+    "build:prod": "npm run setup && webpack --mode production --hide-modules --config build/webpack.config.js",
+    "watch": "npm run build:dev -- --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "autoprefixer": "^9.4.7",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "bootstrap": "^4.2.1",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^1.0.1",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.12.1",
+    "eslint-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "imagemin-webpack-plugin": "^2.4.0",
+    "img-load": "^2.0.0",
+    "isdev": "^1.0.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "mustache": "^3.0.1",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "stylelint": "^8.4.0",
+    "stylelint-webpack-plugin": "^0.10.4",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.3"
+  }
+}
