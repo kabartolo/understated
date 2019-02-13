@@ -6,8 +6,8 @@ const path = require('path');
  * 
  * Warning: This directory will be deleted before each build.
  */
-const themePath = '../../public_html/wp-content/themes/understated';
-const siteURL = 'http://theme-dev.test';
+const themePath = '../dist';
+const siteURL = 'localhost:8080';
 
 module.exports = {
   distPath: themePath,
