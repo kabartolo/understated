@@ -18,6 +18,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Bootstrap is licensed under MIT.
 
-Normalizing styles (included in Bootstrap) have been helped along thanks to the fine work of
+Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
