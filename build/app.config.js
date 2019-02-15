@@ -52,7 +52,9 @@ module.exports = {
     },
 
     /* 
-     * Access your browsersync-connected site at [siteURL]:3000.
+     * Note: Use the Browsersync Access URL listed in the console.
+     * If inside a VM, use the external URL.
+     * You should see "Browsersync: connected" in the browser.
      */
     browserSync: {
       host: siteURL,
