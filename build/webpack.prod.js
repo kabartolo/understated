@@ -14,7 +14,10 @@ module.exports = merge(common, {
     filename: settings.output.js,
   },
   plugins: [
-    new CleanPlugin(settings.paths.output.prod, { allowExternal: true }),
+    new CleanPlugin(settings.paths.output.prod, { 
+      allowExternal: true,
+      exclude: '.git' 
+    }),
     new ImageminPlugin(settings.features.imageMin),
   ],
   optimization: {
