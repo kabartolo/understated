@@ -1,16 +1,6 @@
 const path = require('path');
 
-/*
- * Change this to your theme's build path
- *  (e.g., 'public_html/wp-content/themes/your-theme').
- * 
- * Warning: This directory will be deleted before each build.
- */
-const themePath = '../dist';
-const siteURL = 'localhost:8080';
-
 module.exports = {
-  distPath: themePath,
   entry: {
     app: [
       './src/js/app.js',
@@ -26,7 +16,10 @@ module.exports = {
     root: path.resolve(__dirname, '../'),
     relative: '../',
     external: /node_modules|bower_components/,
-    dist: path.resolve(__dirname, themePath),
+    output: {
+      dev: path.resolve(__dirname, '../dist_dev'), // change to theme path used for testing
+      prod: path.resolve(__dirname, '../dist_prod') // change to theme path in source control
+    },
     src: path.resolve(__dirname, '../src'),
     fonts: path.resolve(__dirname, '../src/fonts'),
     images: path.resolve(__dirname, '../src/images'),
@@ -34,10 +27,6 @@ module.exports = {
     sass: path.resolve(__dirname, '../src/sass'),
     theme: path.resolve(__dirname, '../src/theme')
   },
-
-  /*
-   * External libraries.
-   */
   externals: {
     jquery: 'jQuery'
   },
@@ -45,40 +34,33 @@ module.exports = {
   /*
    * Settings for various build features.
    */
-  settings: {
+  features: {
     autoprefixer: {
       browsers: ['last 2 versions'],
       cascade: false,
     },
-
-    /* 
-     * Note: Use the Browsersync Access URL listed in the console.
-     * If inside a VM, use the external URL.
-     * You should see "Browsersync: connected" in the browser.
-     */
     browserSync: {
-      host: siteURL,
-      proxy: siteURL,
-    },
-    minifyCSS: {},
-    uglifyJS: {
-      cache: true,
-      parallel: true,
-      uglifyOptions: {
-        compress: false,
-        ecma: 6,
-        mangle: true
-      },
-      sourceMap: true
+      host: 'localhost:8080',
+      proxy: 'localhost:8080',
     },
     imageMin: {
       test: /\.(jpe?g|png|gif|svg)$/i,
       optipng: { optimizationLevel: 7 },
       gifsicle: { optimizationLevel: 3 },
       pngquant: { quality: '65-90', speed: 4 },
-      svgo: { removeUnknownsAndDefaults: false, cleanupIDs: false }
+      svgo: { removeUnknownsAndDefaults: false, cleanupIDs: false },
     },
-    sourceMaps: true,
+    minifyCSS: {},
     styleLint: {},
-  }
+    uglifyJS: {
+      cache: true,
+      parallel: true,
+      uglifyOptions: {
+        compress: false,
+        ecma: 6,
+        mangle: true,
+      },
+      sourceMap: true,
+    },
+  },
 };

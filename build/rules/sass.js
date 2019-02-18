@@ -2,11 +2,11 @@ const isdev = require('isdev');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const config = require('../app.config');
+const settings = require('../webpack.settings.js');
 
 module.exports = {
   test: /\.s[ac]ss$/,
-  include: config.paths.sass,
+  include: settings.paths.sass,
   use: [
     MiniCssExtractPlugin.loader,
     {
@@ -19,7 +19,7 @@ module.exports = {
       loader: 'postcss-loader',
       options: {
         sourceMap: true,
-        plugins: () => [autoprefixer(config.settings.autoprefixer)]
+        plugins: () => [autoprefixer(settings.features.autoprefixer)]
       }
     },
     {

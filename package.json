@@ -14,8 +14,8 @@
   "author": "K. A. Bartolo",
   "scripts": {
     "setup": "mustache build/theme_data/data.json build/theme_data/data_template.txt src/sass/_info.scss",
-    "build:dev": "npm run setup && webpack --mode development --hide-modules --config build/webpack.config.js",
-    "build:prod": "npm run setup && webpack --mode production --hide-modules --config build/webpack.config.js",
+    "build:dev": "npm run setup && webpack --hide-modules --config build/webpack.dev.js",
+    "build:prod": "npm run setup && webpack --hide-modules --config build/webpack.prod.js",
     "watch": "npm run build:dev -- --watch"
   },
   "dependencies": {},
@@ -47,6 +47,7 @@
     "stylelint-webpack-plugin": "^0.10.4",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-merge": "^4.2.1"
   }
 }

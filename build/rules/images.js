@@ -1,16 +1,16 @@
-const config = require('../app.config');
+const settings = require('../webpack.settings.js');
 
 /**
  * Images are handled by webpack plugins.
  */
 module.exports = {
   test: /\.(png|jpe?g|gif|svg)$/,
-  include: config.paths.images,
+  include: settings.paths.images,
   loader: 'file-loader',
   options: {
-    name: config.output.images,
-    context: config.paths.images,
-    publicPath: config.paths.relative,
-    emitFile: false
-  }
+    name: settings.output.images,
+    context: settings.paths.images,
+    publicPath: settings.paths.relative,
+    emitFile: false,
+  },
 }
