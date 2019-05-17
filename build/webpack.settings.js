@@ -17,8 +17,8 @@ module.exports = {
     relative: '../',
     external: /node_modules|bower_components/,
     output: {
-      dev: path.resolve(__dirname, '../dist_dev'), // change to theme path used for testing
-      prod: path.resolve(__dirname, '../dist_prod') // change to theme path in source control
+      dev: path.resolve(__dirname, '../dist_dev'), // change to theme development path
+      prod: path.resolve(__dirname, '../dist_prod') // change to theme production path
     },
     src: path.resolve(__dirname, '../src'),
     fonts: path.resolve(__dirname, '../src/fonts'),

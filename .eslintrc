@@ -1,9 +1,17 @@
 {
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base"],
+  "plugins": ["react"],
+  "env":
+    {
+      "node": true,
+      "es6": true,
+      "browser": true
+    },
   "rules": {
-    "indent": ["error", 2]
-  },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "linebreak-style": "off",
+    "prop-types": "off",
+    "max-len": [1, 80, 2, {ignoreComments: true}],
   }
 }
